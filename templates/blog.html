@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Posts</h1>
+{% if blogs|length == 0 %}
+    <p>There's nothing here yet</p>
+{% else %}
+    {% for blog in blogs %}
+        <div class = 'blogpost'>
+            <article>
+                <h2 class= 'title'>{{blog.title}}</h2><hr>
+                <p class = 'blog'>{{blog.body}}</p>
+            </article>
+        </div>
+    {% endfor %}
+{% endif %}
+<p>Tune in later for more!</p>
+{% endblock %}

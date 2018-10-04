@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            article{
+
+                border-style:solid;
+                border-color: black;
+                border-width: 3px;
+                box-shadow: 5px, 10px;
+                background-color: bisque;
+                padding:10px;
+            }
+            .blogpost{
+                margin:20px;
+                width:700px;
+                box-shadow: 5px 5px gray;
+            }
+            .title{
+                font-family:fantasy;
+            }
+        </style>
+        <a href="/blog"><h1>Posts</h1></a><br>
+        <a href="/newpost"><h1>Create post</h1></a>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

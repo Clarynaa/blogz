@@ -19,9 +19,26 @@
             .title{
                 font-family:fantasy;
             }
+            .error{
+                color:red;
+            }
+            .links{
+                display:inline;
+            }
+            h1{
+                display:inline;
+                padding:0px;
+                margin-right:10px;
+            }
+            body{
+                margin: 10px;
+            }
         </style>
-        <a href="/blog"><h1>Posts</h1></a><br>
+        <div class = 'links'><a href="/blog"><h1>Posts</h1></a>
         <a href="/newpost"><h1>Create post</h1></a>
+        </div>
+        <br><br>
+        <title>{{title}}</title><br>
     </head>
     <body>
         {% block content %}

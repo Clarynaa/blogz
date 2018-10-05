@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<h1>New Post</h1>
+<br><br>
+<form action='/' method='POST'>
+    <div>
+        <label>Title: 
+        <p class='error'>{{title_error}}</p><input type='text' name = 'title'/></label>
+    </div>
+    <br>
+    <div>
+        <label>Blog body</label><br>
+        <p class='error'>{{body_error}}</p><textarea name = 'body' rows='15' cols='120'></textarea>
+    </div>
+    <input type="submit" value='Create Post'>
+</form>
 {% endblock %}

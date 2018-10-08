@@ -37,8 +37,11 @@ def index():
         new_blog = Blog(blog_title, blog_text)
         db.session.add(new_blog)
         db.session.commit()
-        return render_template('post.html', title=new_blog.title, body=new_blog.body)
-
+        return redirect('/?q={}'.format(new_blog.id))
+    if request.args.get('q'):
+        blogid= request.args.get('q')
+        blog = Blog.query.get(blogid)
+        return render_template('post.html', title=blog.title, body=blog.body)
     blogs = Blog.query.order_by(Blog.id.desc()).all()
     return render_template('blog.html', blogs=blogs)
 

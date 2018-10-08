@@ -7,7 +7,7 @@
     {% for blog in blogs %}
         <div class = 'blogpost'>
             <article>
-                <h2 class= 'title'><a href='/post?q={{blog.id}}' >{{blog.title}}</a></h2><hr>
+                <h2 class= 'title'><a href='/?q={{blog.id}}' >{{blog.title}}</a></h2><hr>
                 <p class = 'blog'>{{blog.body}}</p>
             </article>
         </div>

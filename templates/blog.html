@@ -7,8 +7,9 @@
     {% for blog in blogs %}
         <div class = 'blogpost'>
             <article>
-                <h2 class= 'title'><a href='/?q={{blog.id}}' >{{blog.title}}</a></h2><hr>
-                <p class = 'blog'>{{blog.body}}</p>
+                <h2 class= 'title'><a href='/blog?q={{blog.id}}' >{{blog.title}}</a></h2><hr>
+                <p class = 'blog'>{{blog.body}}</p><hr>
+                <p class = 'signature'>Written by <a href='/blog?user={{blog.author.id}}'>{{blog.author.username}}</a></p>
             </article>
         </div>
     {% endfor %}

@@ -11,6 +11,15 @@
                 background-color: bisque;
                 padding:10px;
             }
+            div{
+                float: left;
+            }
+            label{
+                font-size: 20px;
+            }
+            #submit{
+                float:unset;
+            }
             .blogpost{
                 margin:20px;
                 width:700px;
@@ -41,6 +50,9 @@
         <title>{{title}}</title><br>
     </head>
     <body>
+        <a href="/index">Home</a>
+        <a href="/login">Log In</a>
+        <a href="/logout">Log Out</a><br><br>
         {% block content %}
         {% endblock %}
     </body>

@@ -136,7 +136,7 @@ def login():
                 flash("Password is incorrect")
             else:
                 session['user'] = username
-                return render_template('/newpost', title="New Post")
+                return render_template('newpost.html', title="New Post")
     return render_template("login.html", title="Log In")
 
 @app.route('/index')

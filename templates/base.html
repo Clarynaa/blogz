@@ -48,6 +48,13 @@
         <title>{{title}}</title><br>
     </head>
     <body>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category,message in messages %}
+            <li class ='{{category}}'>{{message}}</li>
+        {% endfor %}
+        </ul>
+        {% endwith %}
         <a href="/index">Home</a>
         <a href="/login">Log In</a>
         <a href="/logout">Log Out</a><br><br>

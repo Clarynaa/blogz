@@ -130,10 +130,10 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(username = username).first()
         if not user:
-            flash("Username doesn't exist")
+            flash("Username doesn't exist", "error")
         else:
             if user.password != password:
-                flash("Password is incorrect")
+                flash("Password is incorrect", "error")
             else:
                 session['user'] = username
                 return render_template('newpost.html', title="New Post")

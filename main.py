@@ -69,7 +69,7 @@ def blog():
     if request.args.get('q'):
         blogid= request.args.get('q')
         blog = Blog.query.get(blogid)
-        return render_template('post.html', title=blog.title, body=blog.body)
+        return render_template('post.html', blog = blog) # title=blog.title, body=blog.body)
     blogs = Blog.query.order_by(Blog.id.desc()).all()
     return render_template('blog.html', blogs=blogs)
 

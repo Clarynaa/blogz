@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{title}}</h1><hr>
-<h3>{{body}}</h3>
+<h1>{{blog.title}}</h1><hr>
+<h3>{{blog.body}}</h3>
+<h4>Written By: <a href='/blog?user={{blog.author.id}}'>{{blog.author.username}}</a></h4>
 {% endblock %}

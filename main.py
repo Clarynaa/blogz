@@ -33,7 +33,7 @@ class User(db.Model):
 
 @app.before_request
 def require_login():
-    allowed_routes = ['login', 'signup', 'blog']
+    allowed_routes = ['login', 'signup', 'blog', 'index']
     if request.endpoint not in allowed_routes and 'user' not in session:
         return redirect('/login')
 
@@ -84,8 +84,10 @@ def post():
     return render_template('post.html', title=blog.title, body=blog.body)
 
 @app.route('/')
-def base():
-    return redirect('/index')
+def index():
+    users = User.query.order_by(User.username).all()
+
+    return render_template('index.html', users = users)
 
 
 @app.route('/signup', methods = ['POST', 'GET'])
@@ -139,11 +141,11 @@ def login():
                 return render_template('newpost.html', title="New Post")
     return render_template("login.html", title="Log In")
 
-@app.route('/index')
-def indexx():
-    users = User.query.order_by(User.username).all()
+# @app.route('/index')
+# def indexx():
+# users = User.query.order_by(User.username).all()
 
-    return render_template('index.html', users = users)
+# return render_template('index.html', users = users)
 
 @app.route('/logout')
 def logout():
